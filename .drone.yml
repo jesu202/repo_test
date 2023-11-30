@@ -1,0 +1,20 @@
+kind: pipeline
+name: default
+
+steps:
+- name: hello
+  image: busybox
+  commands:
+  - echo hello world
+
+- name: notify
+  image: drillster/drone-email
+  settings:
+    host: smtp.gmail.com
+    username: jesusmartin213.jm@gmail.com
+    password: ldaw kbtv cujz hwue
+    from: jesusmartin213.jm@gmail.com
+
+trigger:
+  branches:
+  - main
